@@ -4,16 +4,14 @@ plugins {
 }
 
 android {
-    namespace 'com.example.proandroid'
-    compileSdk 33
+    compileSdk Config.compile_sdk
 
     defaultConfig {
-        applicationId "com.example.proandroid"
-        minSdk 24
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
-
+        applicationId Config.application_id
+        minSdk Config.min_sdk
+        targetSdk Config.target_sdk
+        versionCode Releases.version_code
+        versionName Releases.version_name
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,21 +22,39 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility Config.java_version
+        targetCompatibility Config.java_version
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = Config.jvm_target
     }
+    namespace 'com.example.proandroid'
 }
 
 dependencies {
+    //modules
+    //implementation project(Modules.model)
+    //implementation project(Modules.repository)
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    //Coil
+    implementation Ui.coil
+
+    //koin
+    implementation Koin.core
+    implementation Koin.android
+
+    //kotlin
+    implementation Kotlin.core
+    implementation Kotlin.fragment
+
+    //android
+    implementation Ui.app_compat
+    implementation Ui.material
+    implementation Ui.constraint_layout
+    implementation Ui.swipe_refresh_layout
+
+    //test
+    testImplementation Testing.junit
+    androidTestImplementation Testing.junit_ext
+    androidTestImplementation Testing.espresso
 }
