@@ -33,8 +33,8 @@ android {
 
 dependencies {
     //modules
-    //implementation project(Modules.model)
-    //implementation project(Modules.repository)
+    implementation project(':model')
+    implementation project(':repository')
 
     //Coil
     implementation Ui.coil
@@ -57,4 +57,5 @@ dependencies {
     testImplementation Testing.junit
     androidTestImplementation Testing.junit_ext
     androidTestImplementation Testing.espresso
+
 }
