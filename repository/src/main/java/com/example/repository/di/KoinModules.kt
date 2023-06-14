@@ -6,7 +6,6 @@ import com.example.repository.retrofit.WordRetrofitService
 import com.example.repository.room.HistoryDao
 import com.example.repository.room.HistoryDatabase
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
-import org.koin.android.BuildConfig
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import retrofit2.Retrofit
