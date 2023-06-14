@@ -4,6 +4,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.model.LoadWordsState
 import com.example.model.WordEntity
 import kotlinx.coroutines.*
+import kotlinx.coroutines.flow.collect
 
 class HistoryViewModel(private val interactor: HistoryController.Interactor) :
     HistoryController.BaseViewModel() {
@@ -30,3 +31,5 @@ class HistoryViewModel(private val interactor: HistoryController.Interactor) :
         }
     }
 }
+
+
