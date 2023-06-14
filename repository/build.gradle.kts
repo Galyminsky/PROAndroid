@@ -24,6 +24,7 @@ android {
                 "proguard-rules.pro"
             )
         }
+
     }
 
     compileOptions {
@@ -34,6 +35,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildTypes.forEach { buildType ->
+        buildType.buildConfigField("String", "BASE_URL", "\"\${localProperties['BASE_URL']}\"")
+    }
+
 
 }
 
